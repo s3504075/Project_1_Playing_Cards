@@ -183,9 +183,14 @@ public class carddeck
         //give the player their hand
         System.out.println("Enter the number of cards you wish to get in your player hand: ");
         int numcards=input.nextInt();
-        ArrayList<Card> playerHand = plc.SelectHand(numcards); //set the player hand of size numcards
-        //PlayerHandforDisp=playerHand.toString();
-        plc.displayHand(playerHand);
+        if(numcards <= 7) {
+            ArrayList<Card> playerHand = plc.SelectHand(numcards); //set the player hand of size numcards
+            //PlayerHandforDisp=playerHand.toString();
+            plc.displayHand(playerHand);
+        }
+        else {
+            System.out.println("Hand is too big!!");
+        }
 
 
     } //end Main
